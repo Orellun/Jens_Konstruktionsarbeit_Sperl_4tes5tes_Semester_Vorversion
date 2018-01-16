@@ -1,0 +1,143 @@
+% Header mit Deklarationen
+\input{Sonderseiten/header.tex}
+
+% Zinz Biblio-Management
+% Literaturverzeichnis
+% \bibliography{literatur/bib}
+
+\begin{document}
+
+% Römische Nummerierung für Sonderseiten, wie Verzeichnisse und Anhang
+\pagenumbering{Roman}
+
+% Titelblatt
+\input{Sonderseiten/Titelseite_2.tex}
+
+\cleardoublepage\thispagestyle{empty}
+
+\input{Sonderseiten/Eigenstaendigkeitserklauerung}
+
+
+\cleardoublepage
+
+% \input{Sonderseiten/Sperrvermerk}
+
+\clearpage
+
+\input{Sonderseiten/Zusammenfassung}
+
+\clearpage
+
+% Verzeichnisse
+% Kopfzeile links Kapitel, rechts leer
+%\ihead{\leftmark}
+%\ohead{}
+%\input{Sonderseiten/verzeichnisse}
+
+%
+% Inhaltsverzeichnis
+%
+\tableofcontents \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}%\pdfbookmark[0]{Inhaltsverzeichnis}{sumario_label_pdf}
+
+
+%\input{Sonderseiten/nomenklatur}
+
+
+%
+% Abkürzungsverzeichnis
+%
+%\input{Sonderseiten/abkuerzungen}
+%\printglossary[title={Abkürzungsverzeichnis},toctitle={Abkürzungsverzeichnis},type=\acronymtype,style=long]
+
+
+
+
+
+
+
+
+% Merke mir die römische Seitenzahl in 'roemisch' und setzte Nummeriernung 
+
+% auf arabisch für die eigentlichen Kapitel
+\cleardoublepage
+
+\newcounter{roemisch}
+\setcounter{roemisch}{\value{page}}
+\pagenumbering{arabic}
+
+\input{kapitel/Das_AUVSI_Projekt.tex}
+
+\cleardoublepage
+
+\input{kapitel/Anforderungen.tex}
+
+\cleardoublepage
+
+\input{kapitel/Elektronikentwicklung.tex}
+
+\cleardoublepage
+
+%\input{kapitel/Platinenentwicklung.tex}
+
+\cleardoublepage
+
+\input{kapitel/Erprobung_im_Labor.tex}
+
+\cleardoublepage
+
+%\input{kapitel/Einsatz_Flugerprobung.tex}
+
+\cleardoublepage
+
+%\input{kapitel/Einsatz_Wettbewerb.tex}
+
+\cleardoublepage
+
+\input{kapitel/Weiterentwicklung.tex}
+
+\cleardoublepage
+
+\input{kapitel/Fazit_Ausblick.tex}
+
+
+\cleardoublepage
+
+% Setze Numerierung wieder auf römisch zurück und setzte von oben fort
+% Wert ist demnach der von 'roemisch'
+\newpage
+%\pagenumbering{Roman}
+%\setcounter{page}{\value{roemisch}}
+
+% Maxi Biblio-Management
+\bibliography{literatur/bib}
+
+% Zinz Biblio-Management
+% %\printbibheading[title=Quellenverzeichnis]
+% %\printbibliography %[heading=none]
+% %\printbibliography[keyword=Literatur, heading=subbibliography, title={Literaturverzeichnis}]
+% %\printbibliography[keyword=Quelle, heading=subbibliography, title={Quellenverzeichnis}]
+
+%
+% Abbildungsverzeichnis
+%
+\listoffigures
+
+%
+% Tabellenverzeichnis
+%
+\listoftables
+
+\cleardoublepage
+
+
+%\begin{comment}
+% Appendix, falls vorhanden
+\appendix
+%\input{Sonderseiten/anhang}
+%\end{comment}
+
+
+% Eidesstattliche Erklärung
+%\input{Sonderseiten/eidesstattliche}
+
+\end{document}

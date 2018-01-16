@@ -1,0 +1,132 @@
+\chapter{Anforderungen an die Flugplattform}\label{cha:Anforderungen an die Flugplattform}
+
+Um eine zielgerichtete Entwicklung des Elektronikkonzepts zu ermöglichen wurden zunächst die globalen Anforderungen an die Flugplattform abstrakt formuliert. Diese wurden unter Einwirkungn des sich verändernden Reglements des AUVSI Wettberwerbs und die Formulierung neuer Aufgaben für die Flugplattform über die Einsatzdauer weiterentwickelt und ergänzt.  
+
+
+\section{(Verändern) Anforderung an das Flugzeug}
+
+Um einen sicheren Betrieb sowohl durch den Autopiloten als auch durch einen Menschlichen Testpiloten zur ermöglichen
+wurde die Fluggeschwindigkeit zu Beginn zunächst auf maximal 18 m/s festgelegt. Die Geschwindigkeit am Punkt des Strömungsabsrisses wird Rechnerisch zu 10 m/s bestimmt.
+Aus den Beschränkung beim Transport zum Wettbewerb als reguläres Gepäck im Internationalen Flugverkehr ergibt sich eine Maximale Länge aller Komponenten von 700 mm. Diese resultiert aus der größten Innenlänge der zur Verfügung stehenden Aluminium Transportkisten von etwa 725mm.
+Aus Versicherungsrechtlichen Gründen wurde das maximale Startgewicht der Plattform auf 5 Kg beschränkt.
+Es soll eine Ausreichende Operationsdauer für die Aufgaben des Wettbewerbs als auch andere Einsatzszenarien 
+erreicht werden. Dabei müssen ausreichende Reserven für Sichtflug im Fehlerfall, Start, Steigflug und Landung vorgestehen werden.
+Es wird damit eine Gesamtflugdauer von 45 Minuten als Szenario festgelegt.
+
+Alle bestehenden Hubschrauber und Coptersysteme welche für ähnliche Aufgaben eingesetzt werden erzeugen Auftrieb ausschließlich aus Schub im Motor Propeller Antriebsstrang. Ein Flächenflugzeug wandelt den Schub auch bei kleinen Flügelstreckungen wenigstens im Verhältnis von 1:10 in Auftrieb um. Die Gleitzahl ist hier die Bestimmende Größe.
+
+Damit fällt durch die Flugzeitvorgabe die Entscheidung für ein Flächenflugzeug. Anders erscheint diese Flugzeug bei Transport von Nutzlast unter Einhaltung des Abfluggewichts nicht realisierbar.
+
+In dieser Arbeit soll keine Detaillierte Betrachtung der Aerodynamischen und Mechanischen Entwicklungsresultate für das Eigentliche Fluggerät stattfinden. Es wird festgehalten das alle bisher eingesetzten Flugzeuge die oben definierten Anforderungen erfüllen und Spannweiten zwischen 1,5 m und 2,8 m Aufweisen. Des weiteren wurden Abfluggewicht von 4 bis 4,9 Kg eingesetzt.
+
+
+\section{(Verändern) Die Flugplattform als Sensorträger}
+
+Um die zahlreichen Aufgaben des Wettbewerbs \begin{comment} Verweis auf Wettbewerbsaufben \end{comment}
+erfüllen zu können muss die Flugplattform mit Sensoren und Verabreitungssystemen ausgestattet werden.
+Zu diesen zählen hauptsächlich das Kamerasystem zur Detektierung der Buchstaben in der Suchaufgabe mit der dazugehören
+Gimbal Vorrichtung zur Bildstabilisierung. Die Bilddaten sollen an Bord mit einem Kleinrechner  verarbeitet werden. Weitere Systeme sind der LIDAR Abstandssensor für einen akkuraten Landeanflug, sowie die Abwurfvorrichtung für das Ei beziehungsweise im späteren Regelwerk die Wasserflasche.
+Es werden außerdem eine Reihe von Sensoren zur Versorgung des Autopiloten mit Flugdaten mitgeführt. Zu diesen zählen der GPS Empfänger, der Staudrucksensor sowie Batterie Strom- und Spannungssensoren.
+Als Verbindung zur Bodenstation werden zwei Funkfrequenzen eingesetzt.
+Eine 5 Ghz Wlan Verbindung welche eine Hohe Datenrate zur übertragung von Bildern  ermöglicht jedoch aufgrund der Frequenzchakrteristik am Bioden als gefgenstelle eine Nachgeführrte Richtantenne Erfordert.
+Außerdem eine Dipolantenne im Frequenzbereich 433 Mhz welche zur übertragung der Flugdaten zwischen Autopilot und Bodenstation dient. Sie ermöglicht mit der Kleineren Frequenz eine größere Verbindungsreichweite bei gleicher Sendeleistung auf kosten den Datenrate.
+
+Die Bildfrequenz der 2015 eingesetzten Kamera, Limitierte zunächst die Fluggeschwindigkeit im Reiseflug. Um eine für die weitere Auswerung der Bilder sinnvolle Überlappung von etwa 20 Prozent zu erzielen wurde die Geschwindigkeit auf 15 m/s gesetzt.
+
+Die gesteigerte Bildfrequzenz und Auflösung des neusten Kamerasystems ermöglicht den Einsatz eine gesteigerten Missionsgeschwindikeit von 17 m/s welche für die Anwendung in der Saison 2018 geplant ist.
+
+\section{(Ggf. Zusammenlegung mit folgendem Kapitel) Aufgaben der Elektronik}
+
+Die Aufgaben der Elektronik lassen sich in den Bereich der Energieverwaltung und -verteilung  und den Bereich der Signalverteilung separieren.
+
+Alle Subsystem sollen so gut wie möglich gegen Beschädigung durch Überlastung oder Fehlerhafter Bedienung geschützt werden.
+Wenn möglich soll ein Kontrollierter Ausfall der Komponenten in bekannten Zustände realisiert werden.
+
+Aus vorhergegangenen Test wurde das Flugsystem für eine Reine batterielektrische Versorgung Konzeptioniert.
+Der Antrieb durch einen Verbrennungsmotor wurde für die Vorliegende Flugzeuggröße trotz besserem Energiegewicht als unzureichend zuverlässig, aufwendig handhabbar, sowie zu teuer eingestuft.
+Des weiteren schränken bestehende Lärmschutzrichtlinien den Einsatz auf Testflugplätzen ein und es wird davon ausgegangen das sich die unvermeidbaren Vibrationen negativ auf die Zuverlässigkeit der Sensoren auswirkt.
+
+\subsection{Energieverteilung und Verwaltung}
+
+Die Elektrische Energie aus dem Akkusystem wird primär für die Erzeugung des Vortriebs über den Antriebstrang Motorregleer, Bürstenloser Motor, Getriebe und Luftschraube verwendet.
+In diesem Pfand soll die Verwendung Mehrerer Quellen (Akkupacks) bei sicherer Handhabung ermöglicht werden.
+Zweitgrößter Energieverbraucher sind die Aktorsysteme des Flugzeugs ("Servos") für alle Steuerflächen sowie Kamera (Gimbal) und Auswurfsysteme (Ei, Wasserflasche). Diese müssen mit einer festen Spannung von 5,0 Volt versorgt werden.
+Drittgrößter Verbraucher an Bord sind die Funksysteme im 5 Ghz und 433 Mhz Band welche einer Festspannungsversorung mit 12 V  bedürfen.
+Ebenfalls berücksichtigt werden sollen die Verbraucher des Sensorsystems, wie Kamera und Bordcomputer mit einer festen Spannung von 5,0 V hoher Qualität.
+Als kleinster Verbraucher bedarf der Autopiloten Computer und seine Sensorsysteme eine Versorgung Hoher Genauigkeit sowie mit geringer Varianz mit 5,0 V.
+Aus diesen wird innerhalb der Autopiloten Hardware selbstständig 3,3 V erzeugt.
+
+Insgesamt sollen alle Subsysteme im Fehlerfall einen Reibungslosen Weiterbetrieb der restlichen Systemteilnehmer gewährleisten. Insbesondere der Aufrechterhaltung der Funktion des Autopilotensystems wird Priorität eingeräumt.
+
+
+\subsection{Signalvertreilung}
+
+Neben dem Pfad für die Energieverteilung bedürfen eine Vielzahl Logischer Signale der Verbindung und Verzweigung, sowie ausreichendem Schutz vor Fehlbedienung.
+
+Primär erfolgt der Informationstransport über Digitale Bussysteme. Es kommen der I2C Bus, der SPI Bus, sowie serielle Verbindungen zum Einsatz.
+
+I2C  Bus basierten Sensorsignalen gehören Systeme wie der Laser Höhenmesser LIDAR, Geschwindigkeitsmessung über Staudrucksonde sowie GPS zur Positionsbestimmung in Richtung der Eingänge des Autopilotensystems.
+
+Die Kommunikation mit dem Funkübertragungssystem des Autopiloten erfolgt über einen Seriellen Bus.
+
+Es besteht eine Verbindung vom Fernsteuerungsfunkempfängers und seines Satelliten mit dem Autpioloten.
+
+Bisher basieren alle vom Autopiloten ausgegeben Steuersignale auf dem Prinzip der Pulsweitenmodulation "PWM"
+
+Diese steuern den Motorkontroller, die Sonderfunktionen wie den Abwurfmechanismus sowie die Aktorsysteme desflugzeugs .
+
+
+Die Eingänge des Autopiloten bedürfen eines Überspannungsschutzsystems für 3,3 V Logikspannung.
+
+Die Ausgänge des Autopilotencomputers werden nicht speziell geschützt. Hier wird die Versorgung der Ausgänge des Autopiloten mit 5,0V bewerkstelligt. Diese liegt damit unter der  Maximalen Eingangsspannung der Verwendeten Aktorsysteme.
+
+
+\section{(Verwirrend - Weitere Anforderungen Elektronik) Umsetzung in der Elektronik}
+
+\subsection{Kabel und Steckersystem}
+
+In erster Hardwareebene  wird der Schutz vor Beschädigung und Fehlbedienung der elektrischen Komponenten durch konservativ dimensionierten Einsatz von Kabeln und Steckersystemen erzielt. Die Kabelquerschnitte sind um
+\begin{comment} Prozentzahl ?\end{comment}
+überdimensioniert. Bei den Steckverbindungen wird nach Möglichkeit eine Einmalige Polanzahl des Verbinders gewählt.
+Die Stecker besitzen bei empfindlichen Signalkabeln eine mechanische Arretierung durch virbationssicheren Formschluss in Form von Bügeln beziehungsweise Haken.
+Um den Verschleiß der Kraftschluss basierten Signalstecker im Autopiloten zu vermeiden, werden alle Signale auf die Platine adaptiert und von dort mit Formschluss basierten Steckern weiter angeschlossen.
+
+Die Leistungsverbinder im Hauptenergiepfad des Motors und der der Akkumulatoren sind Kraftschlussbasiert um einen Kompromiss aus Baugröße, Handhabung und Bertriebssicherheit zu erzielen.
+
+\subsection{Trennung von Signal und Leistungsplatine}
+
+Die  Hochleistungskomponenten im Pfad von den Batterien zum Antriebsstrang werden auf einer von dem Autopiloten und den Signalpfaden räumlich getrennten Platine realisiert. Dies bringt eine Reihe von Vorteilen für das System und die Entwicklung mit sich.
+
+Es ist eine bessere Austauschbarkeit, Weiterentwicklung und Reparatur für einzelne Komponenten möglich.
+Die Schadenshäufigkeit und deren Folgen sind auf der Leistungsplatine größer und graviernder was einen häufigeren 
+Austausch und Weiterentwicklung zur Fehlerkorretur nötig macht.
+
+Der Einsatz verschiedener Fertigungstechniken auf der Leistungs- und der Autopilotenplatine wird vereinfacht.
+
+Die räumliche Trennung verringert den Einfluss durch die Hohen Wechselnden Ströme verursachten Elektrischen Felder auf das Empfindliche Autopilotensystem und seine Ein- und Ausgangssignale.
+
+Sonstige Signalpfade werden im Heck der Flugzeugs zu GPS Empfänger und Antennensystem verlegt um einen größtmöglichen Abstand zur Leistungsplatine zu gewährleisten.
+
+\subsection{Schutz des Batteriesystems}
+
+Zur Realisierung einer Variablen großen Reichweite bei guter Handhabung werden im Regelfall mehrere Akkupacks gleicher Zellenzahl und Kapazität eingesetzt.
+In der Praxis ist es unvermeidlich das der Ladezustand zweier Akkupacks aufgrund von Bauteilstreuung und Handhabung nie identische ist und damit eine Spannungsdifferenz aufweist. Damit würde der Akku mit dem höheren Spannungsniveau sich über eine Niederohmige Verbindung ungebremst in den zweiten Akku bis zum Spannungsangleich entladen. Dies erfolgt mit  hohen strömen und Beschädigung beider Akkumulatoren bis hin zum möglichen Brand der Akkuzellen.
+Um zu Vermeiden das dieser Ausgleich stattfindet wird ein System Implementiert welches nur einen Stromfluss von allen Angeschlossenen Akkumulatoren in Richtung der Verbraucher Ermöglicht.
+Dieses System wird aufgrund seiner Funktionsweise als "ideale Diode" bezeichnet. Es besteht aus einem integrierten Schaltkreis welches einenen Halbleiterschalter (Metalloxidfeldeffekttransistor kurz MOSFET) regelt um einen Konstante Spannungsdifferenz zwischen Eingang und Ausgang dieser Schaltung zu halten.
+
+\subsection{Bereitstellung der Versorgungspannungen}
+
+Die Erzeugung der erforderlichen Versorgungsspannungen für alle Subsysteme erfolgt über den Einbau von Gleichstrom-Gleichstrom Wechselrichtern (kurz DC-DC Wandlern).
+Diese erzeugen die nötigen Spannungen durch sogenannte "Step down"  Wandlung aus der Spannung des Batteriesystems.
+Für Empfindliche Systeme wie den Autopiloten und die Sensoren werden die jeweiligen Spannungen durch die Verwendung von Linearreglern erzeugt welche eine hohe Genauigkeit, geringe Varianz und niedrige Restwelligkeit des erzielten Ausgangsspannungswertes gewährleisten.
+
+Um im Fehlerfall eines Subsystems durch zum Beispiel Kurzschluss eine Beschädigung des Spannungsversorgungssystems durch Überstrom und den daraus Resultierenden Ausfall der Systemgruppe zu vermeiden wird jeder Verbraucher mit einer selbstrückstellenden Sicherung mit einem Nennstrom in der Größenordnung von 125 Prozent seines Datenstroms ausgestattet.
+So wird bei einem Überstromfehler das Subsystem abgetrennt und der Weiterbetrieb der Versorgung nicht beeinträchtigt.
+
+
+\subsection{Handhabung der Logiksignale}
+
+Alle Bussysteme sowie Steuersignale werden nach Möglichkeit weit entfernt von Leistungspfaden geführt und mit kurzen Verbindungen realisiert.
+Bussysteme wie I2C erhalten die nötigen Grundbeschaltungen mit Pull up Wiederständen.
+
+Eingangsignale in den Autopiloten erhalten eine Eingangs Schutzbeschaltung welche mithilfe einer zener Diode und Vorwiederständen welche Überspannung Ableitet.

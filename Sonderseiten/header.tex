@@ -1,0 +1,300 @@
+\documentclass[%
+	pdftex,%              PDFTex verwenden
+	a4paper,%             A4 Papier
+	twoside,%             Einseitig/ wzeiseitig
+	bibtotoc,%    		Literaturverzeichnis einfügen bibtotocnumbered: nummeriert
+	liststotoc,%		Verzeichnisse einbinden in toc
+	idxtotoc,%            Index ins Verzeichnis einfügen
+	halfparskip,%        Europäischer Satz mit abstand zwischen Absätzen
+	%chapterprefix,%       Kapitel anschreiben als Kapitel
+	headsepline,%         Linie nach Kopfzeile
+	footsepline,%         Linie vor Fusszeile
+	pointlessnumbers,%     Nummern ohne abschließenden Punkt
+	12pt,%                 Grössere Schrift, besser lesbar am bildschrim
+	bibliography=totoc,
+	cleardoublepage=empty,
+	index=totoc,
+	listof=totoc,
+]{scrreprt}
+
+%Maxi Biblio-Management
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{unsrtdin}
+
+%Zindath Biliothek Management
+%\usepackage[backend=bibtex,bibencoding=ascii,style=numeric,citestyle=numeric-comp,defernumbers=true]{biblatex} 
+
+%
+% Seitenränder
+%
+\usepackage{geometry}
+\geometry{a4paper, top=30mm, left=30mm, right=20mm, bottom=25mm, headsep=10mm, footskip=10mm}
+
+
+
+%
+% Paket für Übersetzungen ins Deutsche
+%
+\usepackage[french,english,ngerman]{babel}
+
+%
+% Pakete um Latin1 Zeichnensätze verwenden zu können und die dazu
+% passenden Schriften.
+%
+%\usepackage[latin1]{inputenc}
+% UTF8 Kompatabilität
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%
+% Paket für Quotes
+%
+\usepackage[babel,french=guillemets,german=quotes]{csquotes}
+
+%
+% Paket zum Erweitern der Tabelleneigenschaften
+%
+\usepackage{array}
+
+
+%
+% Paket für schönere Tabellen
+%
+\usepackage{booktabs}
+
+%
+% Paket um Grafiken einbetten zu können
+%
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float} % zum abstellen der float umgebung von Grafiken
+\usepackage[export]{adjustbox}
+
+%
+% Spezielle Schrift im Koma-Script setzen.
+%
+\setkomafont{sectioning}{\normalfont\bfseries}
+\setkomafont{captionlabel}{\normalfont\bfseries} 
+\setkomafont{pagehead}{\normalfont\bfseries} % Kopfzeilenschrift
+\setkomafont{descriptionlabel}{\normalfont\bfseries}
+
+%
+% Zeilenumbruch bei Bildbeschreibungen.
+%
+\setcapindent{1em}
+%\setlength{\abovecaptionskip}{0pt}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\fancyhead{}
+%\fancyfoot{}
+%\fancyhead[LE,RO]{\leftmark}
+%\fancyhead[LO]{\rightmark}
+%\fancyhead[RE]{\thepage}
+%\fancyhead[R]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\fancyfoot[C]{\thepage}
+\fancyhead[RO]{\includegraphics[width=75pt]{Logos/HM_Deu_CMYK_Graust}}
+\fancyhead[LE]{\textsc{Diplomarbeit}}
+\fancypagestyle{plain}{}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter{} #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection{} #1}{}}
+\setlength{\headheight}{37pt} 
+
+
+%\usepackage{scrpage2}
+%\pagestyle{scrheadings}
+% Inhalt bis Section rechts und Chapter links
+%\automark[section]{chapter}
+
+% Mitte: leer
+%\chead{}
+
+%
+% mathematische symbole aus dem AMS Paket.
+%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[fixamsmath, disallowspaces]{mathtools}
+
+%
+% Type 1 Fonts für bessere darstellung in PDF verwenden.
+%
+\usepackage{mathptmx}           % Times + passende Mathefonts
+\usepackage[scaled=.92]{helvet} % skalierte Helvetica als \sfdefault
+\usepackage{courier}            % Courier als \ttdefault
+
+%
+% Paket um Textteile drehen zu können
+%
+\usepackage{rotating}
+
+
+
+
+%
+%1 Glossaries / Verzeichnisse
+%
+\usepackage[nonumberlist,toc,nopostdot]{glossaries}
+% Entferne alphabetische Gruppierung des Glossars
+\renewcommand{\glsgroupskip}{}
+\makeglossaries
+
+
+%
+% Paket um LIstings sauber zu formatieren.
+%
+\usepackage[savemem]{listings}
+\lstloadlanguages{TeX}
+
+
+
+%
+% Neue Umgebungen
+%
+\newenvironment{ListChanges}%
+	{\begin{list}{$\diamondsuit$}{}}%
+	{\end{list}}
+
+%
+% aller Bilder werden im Unterverzeichnis figures gesucht:
+%
+\graphicspath{{bilder/}}
+
+
+%
+% Anführungsstriche mithilfe von \textss{-anzufuehrendes-}
+%
+\newcommand{\textss}[1]{"`#1"'}
+
+%
+% Strukturiertiefe bis subsubsection{} möglich
+%
+\setcounter{secnumdepth}{4}
+
+%
+% Dargestellte Strukturiertiefe im Inhaltsverzeichnis
+%
+\setcounter{tocdepth}{4}
+
+%
+% Zeilenabstand wird um den Faktor 1.5 verändert
+%
+%\renewcommand{\baselinestretch}{1.5}
+\usepackage{setspace} %Zeilenabstand einstellbar
+
+
+
+\usepackage{caption}
+
+
+\DeclareUnicodeCharacter{00A0}{ }
+
+
+
+\usepackage{verbatim}
+
+
+
+
+%\newcommand{\submissiondate}{27. August 2015}
+%\newcommand{\submissionmonthyear}{August 2015}
+
+
+% Tabellenprogramm
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% Plotten von Tabellen
+\usepackage[svgnames]{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+thick,
+tick style={thick}},
+%width=10cm,
+compat=1.12,
+cycle list={Bihler1\\Bihler2\\green\\orange\\},
+}
+\usepgfplotslibrary{external}
+\usetikzlibrary{pgfplots.groupplots}
+
+
+
+\usepackage{siunitx}
+
+
+
+\addto\captionsngerman{
+\renewcommand{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+%\renewcommand{\refname}{Quellenverzeichnis}
+% \renewcommand{\bibname}{Quellenverzeichnis}
+}
+
+
+
+
+% Bihlerfarben
+\definecolor{Bihler1}{RGB}{21, 78, 113}
+\definecolor{Bihler2}{RGB}{146, 46, 46}
+
+
+
+
+\usepackage[section]{placeins}
+
+\usepackage{pdfpages}
+
+\usepackage{lscape}
+
+
+\usepackage{colortbl}
+
+
+
+
+
+
+\usepackage{microtype}
+%\overfullrule=2cm
+
+
+
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
+
+
+
+
+\begin{comment}
+%
+% Paket für Links innerhalb des PDF Dokuments
+%
+\definecolor{LinkColor}{rgb}{0,0,0.5}
+\usepackage[%
+	pdftitle={Titel},% Titel der Diplomarbeit
+	pdfauthor={Jens Schmelkus},% Autor(en)
+	pdfcreator={LaTeX, LaTeX with hyperref and KOMA-Script},% Genutzte Programme
+	pdfsubject={Diplomarbeit}, % Betreff
+	pdfkeywords={Keywords}]{hyperref} % Keywords halt :-)
+\hypersetup{colorlinks=false,% Definition der Links im PDF File
+	linkcolor=LinkColor,%
+	citecolor=LinkColor,%
+	filecolor=LinkColor,%
+	menucolor=LinkColor,%
+	pagecolor=LinkColor,%
+	urlcolor=LinkColor}
+	
+	
+\definecolor{Colour1}{HTML}{1B9E77}
+\definecolor{Colour2}{HTML}{D95F02}
+\definecolor{Colour3}{HTML}{7570B3}
+\definecolor{Colour4}{HTML}{E7298A}
+\definecolor{Colour5}{HTML}{66A61E}
+\definecolor{Colour6}{HTML}{E6AB02}
+\definecolor{Colour7}{HTML}{A6761D}
+\end{comment}

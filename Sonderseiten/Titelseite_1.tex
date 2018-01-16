@@ -1,0 +1,75 @@
+% Die Titelseite
+% Im folgenden kommen ein paar Variablen, die auszufüllen sind
+% Bisher steht dort nur Musterinhalt
+% Außerdem müssen zei Dateien erstellt werden, Bild/Logo/Emblem des Fachgebietes
+% sowie der Universität
+
+\newcommand{\trtitle}{Entwickeln von Prüfkriterien und eines Testablaufes für die Abnahme von NC Aggregaten in der Serienfertigung}
+\newcommand{\trtype}{Diplomarbeit}
+\newcommand{\trauthor}{Jens Schmelkus}
+\newcommand{\trstrasse}{Im Gässsle 1}
+\newcommand{\trmatrikelnummer}{06097611}
+\newcommand{\trort}{86869 Oberostendorf / Lengenfeld}
+\newcommand{\trprof}{Prof. Dr.-Ing. Frank Palme}
+\newcommand{\trbetreuer}{Thomas Grotz}
+\newcommand{\trfachgebiet}{XXXX}
+\newcommand{\trfakultaet}{Fakultät 03}
+\newcommand{\truni}{Hochschule München}
+\newcommand{\trdate}{\today}
+
+\thispagestyle{empty}
+
+% Kopfzeile mit Logos.
+% Eventuell die \hspace{} je nach Logogröße anpassen
+\begin{tabular}{lcr}
+  \includegraphics[scale=0.08]{fk03} & % dein_unilogo.jpg/.eps im Verzeichnis "bilder" ablegen
+  \hspace{1.5cm} \truni \hspace{1cm} &
+  \trauthor
+  \\
+\end{tabular}
+
+\rule{\textwidth}{0.8pt}
+
+\vspace{1cm}
+\begin{center}
+  \textbf{\LARGE \trtitle}
+\end{center}
+
+
+\begin{center}
+\includegraphics[scale=0.8]{Bihler_Logo} % dein_fglogo.jpg/.eps im Verzeichnis "bilder" ablegen, Fachgebietslogo
+\\
+\end{center}
+
+\begin{center}
+  \textbf{\trtype} \\
+  %am Fachgebiet \trfachgebiet \\
+  \trprof \\
+  
+  \trfakultaet \\
+  \truni \\[0.5cm]
+  vorgelegt von \\
+  \textbf{\trauthor}
+\end{center}
+
+\vspace{1cm}
+
+
+
+\begin{center}
+\begin{tabular}{ll}
+Betreuer: & \trbetreuer \\
+\end{tabular}
+\end{center}
+
+
+\vfill
+
+\begin{tabular}{l}
+\trauthor \\
+Matrikelnummer:  \trmatrikelnummer \\
+\trstrasse \\
+\trort
+\end{tabular}
+
+\rule{\textwidth}{0.4pt}
