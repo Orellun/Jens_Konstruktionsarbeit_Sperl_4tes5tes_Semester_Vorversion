@@ -15,7 +15,7 @@
 
 \cleardoublepage\thispagestyle{empty}
 
-\input{Sonderseiten/Eigenstaendigkeitserklauerung}
+%\input{Sonderseiten/Eigenstaendigkeitserklauerung}
 
 
 \cleardoublepage
@@ -40,20 +40,14 @@
 \tableofcontents \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}%\pdfbookmark[0]{Inhaltsverzeichnis}{sumario_label_pdf}
 
 
-%\input{Sonderseiten/nomenklatur}
+\input{Sonderseiten/nomenklatur}
 
 
 %
 % Abkürzungsverzeichnis
 %
-%\input{Sonderseiten/abkuerzungen}
-%\printglossary[title={Abkürzungsverzeichnis},toctitle={Abkürzungsverzeichnis},type=\acronymtype,style=long]
-
-
-
-
-
-
+\input{Sonderseiten/abkuerzungen}
+\printglossary[title={Abkürzungsverzeichnis},toctitle={Abkürzungsverzeichnis},type=\acronymtype,style=long]
 
 
 % Merke mir die römische Seitenzahl in 'roemisch' und setzte Nummeriernung 
@@ -65,57 +59,44 @@
 \setcounter{roemisch}{\value{page}}
 \pagenumbering{arabic}
 
-\input{kapitel/Das_AUVSI_Projekt.tex}
+\input{kapitel/00_Ausgangslage.tex}
 
 \cleardoublepage
 
-\input{kapitel/Anforderungen.tex}
+\input{kapitel/01_Statistische_Betrachtung.tex}
 
 \cleardoublepage
 
-\input{kapitel/Elektronikentwicklung.tex}
+\input{kapitel/02_Lasten_nach_CS23.tex}
 
 \cleardoublepage
 
-%\input{kapitel/Platinenentwicklung.tex}
+\input{kapitel/03_Optimierungsgrenzen.tex}
 
 \cleardoublepage
 
-\input{kapitel/Erprobung_im_Labor.tex}
+\input{kapitel/04_Strukturberechnung.tex}
 
 \cleardoublepage
 
-%\input{kapitel/Einsatz_Flugerprobung.tex}
+\input{kapitel/05_Konstruktion.tex}
 
 \cleardoublepage
 
-%\input{kapitel/Einsatz_Wettbewerb.tex}
+\input{kapitel/06_Zeichnungssatz.tex}
 
 \cleardoublepage
 
-\input{kapitel/Weiterentwicklung.tex}
+\input{kapitel/07_Bewertung.tex}
 
 \cleardoublepage
 
-\input{kapitel/Fazit_Ausblick.tex}
-
-
-\cleardoublepage
-
-% Setze Numerierung wieder auf römisch zurück und setzte von oben fort
-% Wert ist demnach der von 'roemisch'
 \newpage
 %\pagenumbering{Roman}
 %\setcounter{page}{\value{roemisch}}
 
-% Maxi Biblio-Management
+%Biblio-Management
 \bibliography{literatur/bib}
-
-% Zinz Biblio-Management
-% %\printbibheading[title=Quellenverzeichnis]
-% %\printbibliography %[heading=none]
-% %\printbibliography[keyword=Literatur, heading=subbibliography, title={Literaturverzeichnis}]
-% %\printbibliography[keyword=Quelle, heading=subbibliography, title={Quellenverzeichnis}]
 
 %
 % Abbildungsverzeichnis
@@ -130,14 +111,9 @@
 \cleardoublepage
 
 
-%\begin{comment}
 % Appendix, falls vorhanden
 \appendix
+
 %\input{Sonderseiten/anhang}
-%\end{comment}
-
-
-% Eidesstattliche Erklärung
-%\input{Sonderseiten/eidesstattliche}
 
 \end{document}
